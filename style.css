@@ -7,12 +7,14 @@ body{
   background: linear-gradient(to right,#06b6d4, #67e8f9);
   font-family: Roborto, sans-serif;
 }
+/* main container */
 #libraryContainer{
   padding: 2vh 2vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
   position: relative;
 }
+ /* Form */
 .form{
   position: absolute;
   width: 20vw;
@@ -50,6 +52,8 @@ body{
 .clearButton, .buttonContainer{
   border-bottom-right-radius: 1vh;
 }
+
+/* Book Container */
 .bookContainer{
   display: flex;
   flex-direction: column;
@@ -62,11 +66,13 @@ body{
 .bookContainer p{
   margin-top: 1vh;
 }
-.newBookContainer{
+/* header */
+.header{
   display: flex;
   justify-content: center;
   padding: 2vh 0;
   background-color: #075985;
+  position: sticky;
 }
 #newBookButton{
   padding: 1vh 1vw;
@@ -74,4 +80,13 @@ body{
   border: none;
   background-color: #06b6d4;
   color: white;
+}
+.logo{
+  color: white;
+  position: absolute;
+  left: 2vw;
+  top: 1.5vh;
+  font-weight: 700;
+  font-size: 2rem;
+  
 }
