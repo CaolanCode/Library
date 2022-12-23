@@ -1,6 +1,5 @@
 *{
   box-sizing: border-box;
-  border: 1px black solid;
   padding: 0;
   margin: 0;
 }
@@ -21,6 +20,12 @@ body{
   bottom: 40vh;
   display: grid;
   grid-template-columns: 5vw 15vw;
+  background-color: #075985;
+  color: white;
+}
+.form input, .form label{
+  margin: 1vh 0;
+  padding: .5vh 0;
 }
 .buttonContainer{
   display: flex;
@@ -28,6 +33,7 @@ body{
 }
 .buttonContainer button{
   flex: 1;
+  padding: 1vh 0;
 }
 .bookContainer{
   display: flex;
@@ -35,7 +41,8 @@ body{
   align-items: center;
   font-weight: 700;
   background-color: rgba(255, 255, 255, 0.4);
-  margin: 1vh 2vw;
+  margin: 1vh 1vw;
+  padding: 2vh 0;
 }
 .bookContainer p{
   margin-top: 1vh;
@@ -43,9 +50,13 @@ body{
 .newBookContainer{
   display: flex;
   justify-content: center;
+  padding: 2vh 0;
+  background-color: #075985;
 }
 #newBookButton{
   padding: 1vh 1vw;
   border-radius: 1vh;
   border: none;
+  background-color: #06b6d4;
+  color: white;
 }
