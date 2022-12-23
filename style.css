@@ -6,3 +6,10 @@
   display: grid;
   grid-template-columns: 5vw 15vw;
 }
+.button-container{
+  width: 20vw;
+  display: flex;
+}
+.button-container button{
+  flex: 1;
+}
