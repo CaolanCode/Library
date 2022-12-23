@@ -28,8 +28,8 @@ body{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6)
 }
 .form input, .form label{
-  margin: 1vh 0;
-  padding: .5vh 0;
+  margin-top: 2vh;
+  padding: .5vh;
 }
 .form input{
   margin-right: 1vw;
@@ -40,6 +40,7 @@ body{
 .buttonContainer{
   display: flex;
   width: 20vw;
+  margin-top: 2vh;
 }
 .buttonContainer button{
   flex: 1;
