@@ -1,0 +1,8 @@
+*{
+  box-sizing: border-box;
+  border: 1px black solid;
+}
+.input-container{
+  display: grid;
+  grid-template-columns: 5vw 15vw;
+}
