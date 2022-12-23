@@ -13,7 +13,6 @@ function addBookToLibrary(book){
 
 function updateScreen(){
   for(let book in library){
-    const libraryContainer = document.getElementById('libraryContainer');
     const bookContainer = document.createElement('div');
     bookContainer.classList.add('bookContainer')
     const title = document.createElement('p');
@@ -32,6 +31,59 @@ function updateScreen(){
   }
 }
 
+function createForm(){
+  const form = document.createElement('form');
+  form.classList.add('form');
+  const titleLabel = document.createElement('label');
+  titleLabel.htmlFor = 'titleInput';
+  titleLabel.textContent = "Title: ";
+  const titleInput = document.createElement('input');
+  titleInput.type = "text";
+  titleInput.name = "titleInput";
+  const authorLabel = document.createElement('label');
+  authorLabel.htmlFor = 'authorInput';
+  authorLabel.textContent = "Author: ";
+  const authorInput = document.createElement('input');
+  authorInput.type = "text";
+  authorInput.name = "authorInput";
+  const pagesLabel = document.createElement('label');
+  pagesLabel.htmlFor = 'pagesInput';
+  pagesLabel.textContent = "Pages: ";
+  const pagesInput = document.createElement('input');
+  pagesInput.type = "number";
+  pagesInput.name = "pagesInput";
+  const readLabel = document.createElement('label');
+  readLabel.htmlFor = 'readInput';
+  readLabel.textContent = "Read: ";
+  const readInput = document.createElement('input');
+  readInput.type = "text";
+  readInput.name = "readInput";
+  readInput.placeholder = " Have I read this Book?"
+  const submitButton = document.createElement('button');
+  submitButton.type = "submit";
+  submitButton.textContent = "Submit";
+  const resetButton = document.createElement('button');
+  resetButton.type = "reset";
+  resetButton.textContent = "Clear"
+  const buttonContainer = document.createElement('div');
+  buttonContainer.classList.add('buttonContainer');
+  form.appendChild(titleLabel);
+  form.appendChild(titleInput);
+  form.appendChild(authorLabel);
+  form.appendChild(authorInput);
+  form.appendChild(pagesLabel);
+  form.appendChild(pagesInput);
+  form.appendChild(readLabel);
+  form.appendChild(readInput);
+  buttonContainer.appendChild(submitButton);
+  buttonContainer.appendChild(resetButton);
+  form.appendChild(buttonContainer);
+  body.appendChild(form);
+}
+
+const libraryContainer = document.getElementById('libraryContainer');
+const body = document.body;
+
 const book1 = new Book("Atomic Habits", "James Clear", 320, "yes");
 addBookToLibrary(book1);
 const book2 = new Book("The Thursday Murder Club", "Richard Osman", 400, "no");
@@ -39,6 +91,10 @@ addBookToLibrary(book2);
 const book3 = new Book("The Bullet that missed", "Richard Osman", 432, "no");
 addBookToLibrary(book3);
 updateScreen();
+
+const newBookButton = document.getElementById('newBookButton');
+newBookButton.addEventListener('click', createForm);
+
 
 
 
