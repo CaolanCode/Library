@@ -30,10 +30,10 @@ for(let book in library){
   const author = document.createElement('p');
   const pages = document.createElement('p');
   const read = document.createElement('p');
-  title.textContent = library[book].title;
-  author.textContent = library[book].author;
-  pages.textContent = library[book].pages;
-  read.textContent = library[book].read;
+  title.textContent = `Title: ${library[book].title}`;
+  author.textContent = `Author: ${library[book].author}`;
+  pages.textContent = `Pages: ${library[book].pages}`;
+  read.textContent = `Have I read this book: ${library[book].read}`;
   bookContainer.appendChild(title);
   bookContainer.appendChild(author);
   bookContainer.appendChild(pages);
