@@ -62,9 +62,11 @@ function createForm(){
   const submitButton = document.createElement('button');
   submitButton.type = "submit";
   submitButton.textContent = "Submit";
+  submitButton.classList.add('submitButton');
   const resetButton = document.createElement('button');
   resetButton.type = "reset";
   resetButton.textContent = "Clear"
+  resetButton.classList.add('clearButton');
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('buttonContainer');
   form.appendChild(titleLabel);
