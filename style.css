@@ -22,10 +22,18 @@ body{
   grid-template-columns: 5vw 15vw;
   background-color: #075985;
   color: white;
+  border-radius: 1vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6)
 }
 .form input, .form label{
   margin: 1vh 0;
   padding: .5vh 0;
+}
+.form input{
+  margin-right: 1vw;
+}
+.form label{
+  margin-left: 1vw;
 }
 .buttonContainer{
   display: flex;
@@ -34,6 +42,13 @@ body{
 .buttonContainer button{
   flex: 1;
   padding: 1vh 0;
+  border: 1px #075985 solid;
+}
+.submitButton, .buttonContainer{
+  border-bottom-left-radius: 1vh;
+}
+.clearButton, .buttonContainer{
+  border-bottom-right-radius: 1vh;
 }
 .bookContainer{
   display: flex;
