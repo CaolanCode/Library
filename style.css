@@ -2,6 +2,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  border: 1px black solid;
 }
 body{
   background: linear-gradient(to right,#06b6d4, #67e8f9);
@@ -15,7 +16,7 @@ body{
   position: relative;
 }
  /* Form */
-.form{
+#form{
   position: absolute;
   width: 20vw;
   left: 40vw;
@@ -27,14 +28,14 @@ body{
   border-radius: 1vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6)
 }
-.form input, .form label{
+#form input, #form label{
   margin-top: 2vh;
   padding: .5vh;
 }
-.form input{
+#form input{
   margin-right: 1vw;
 }
-.form label{
+#form label{
   margin-left: 1vw;
 }
 .buttonContainer{
