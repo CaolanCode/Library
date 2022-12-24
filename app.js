@@ -7,8 +7,14 @@ function Book(title, author, pages, read){
   this.read = read;
 }
 
-function addBookToLibrary(book){
+function addBookToLibrary(){
+  const title = document.getElementById('titleInput').value;
+  const author = document.getElementById('authorInput').value;
+  const pages = document.getElementById('pagesInput').value;
+  const read = document.getElementById('readInput').value;
+  const book = new Book(title, author, pages, read);
   library.push(book);
+  console.log(library[0]);    
 }
 
 function updateScreen(){
@@ -40,33 +46,37 @@ function createForm(){
   const titleInput = document.createElement('input');
   titleInput.type = "text";
   titleInput.name = "titleInput";
+  titleInput.setAttribute('id', 'titleInput');
   const authorLabel = document.createElement('label');
   authorLabel.htmlFor = 'authorInput';
   authorLabel.textContent = "Author: ";
   const authorInput = document.createElement('input');
   authorInput.type = "text";
   authorInput.name = "authorInput";
+  authorInput.setAttribute('id', 'authorInput');
   const pagesLabel = document.createElement('label');
   pagesLabel.htmlFor = 'pagesInput';
   pagesLabel.textContent = "Pages: ";
   const pagesInput = document.createElement('input');
   pagesInput.type = "number";
   pagesInput.name = "pagesInput";
+  pagesInput.setAttribute('id', 'pagesInput');
   const readLabel = document.createElement('label');
   readLabel.htmlFor = 'readInput';
   readLabel.textContent = "Read: ";
   const readInput = document.createElement('input');
   readInput.type = "text";
   readInput.name = "readInput";
+  readInput.setAttribute('id', 'readInput');
   readInput.placeholder = " Have I read this Book?"
   const submitButton = document.createElement('button');
   submitButton.type = "submit";
   submitButton.textContent = "Submit";
-  submitButton.classList.add('submitButton');
+  submitButton.setAttribute('id', 'submitButton')
   const resetButton = document.createElement('button');
   resetButton.type = "reset";
   resetButton.textContent = "Clear"
-  resetButton.classList.add('clearButton');
+  resetButton.setAttribute('id', 'clearButton')
   const buttonContainer = document.createElement('div');
   buttonContainer.classList.add('buttonContainer');
   form.appendChild(titleLabel);
@@ -86,16 +96,14 @@ function createForm(){
 const libraryContainer = document.getElementById('libraryContainer');
 const body = document.body;
 
-const book1 = new Book("Atomic Habits", "James Clear", 320, "yes");
-addBookToLibrary(book1);
-const book2 = new Book("The Thursday Murder Club", "Richard Osman", 400, "no");
-addBookToLibrary(book2);
-const book3 = new Book("The Bullet that missed", "Richard Osman", 432, "no");
-addBookToLibrary(book3);
-updateScreen();
-
 const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', createForm);
+
+const submitButton = document.getElementById('submitButton');
+if(submitButton){
+  submitButton.addEventListener('click', addBookToLibrary);
+  console.log("Submit button listener");
+}
 
 
 
