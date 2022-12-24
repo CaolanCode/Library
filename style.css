@@ -47,10 +47,10 @@ body{
   padding: 1vh 0;
   border: 1px #075985 solid;
 }
-.submitButton, .buttonContainer{
+#submitButton, .buttonContainer{
   border-bottom-left-radius: 1vh;
 }
-.clearButton, .buttonContainer{
+#clearButton, .buttonContainer{
   border-bottom-right-radius: 1vh;
 }
 
@@ -70,7 +70,7 @@ body{
 /* header */
 .header{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   padding: 2vh 0;
   background-color: #075985;
   position: sticky;
@@ -81,13 +81,10 @@ body{
   border: none;
   background-color: #06b6d4;
   color: white;
+  position: relative;
 }
 .logo{
   color: white;
-  position: absolute;
-  left: 2vw;
-  top: 1.5vh;
   font-weight: 700;
   font-size: 2rem;
-  
 }
