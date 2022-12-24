@@ -8,11 +8,10 @@ class Book{
     this.read = read;
   }
   addBookToLibrary(){
-    const title = document.getElementById('titleInput').value;
-    const author = document.getElementById('authorInput').value;
-    const pages = document.getElementById('pagesInput').value;
-    const read = document.getElementById('readInput').value;
-    const book = new Book(title, author, pages, read);
+    this.title = document.getElementById('titleInput').value;
+    this.author = document.getElementById('authorInput').value;
+    this.pages = document.getElementById('pagesInput').value;
+    this.read = document.getElementById('readInput').value;
     library.push(book);
     console.log(library[0]);    
   }
@@ -20,24 +19,25 @@ class Book{
     for(let book in library){
       const bookContainer = document.createElement('div');
       bookContainer.classList.add('bookContainer')
-      const title = document.createElement('p');
-      const author = document.createElement('p');
-      const pages = document.createElement('p');
-      const read = document.createElement('p');
-      title.textContent = `Title: ${library[book].title}`;
-      author.textContent = `Author: ${library[book].author}`;
-      pages.textContent = `Pages: ${library[book].pages}`;
-      read.textContent = `Have I read this book?: ${library[book].read}`;
-      bookContainer.appendChild(title);
-      bookContainer.appendChild(author);
-      bookContainer.appendChild(pages);
-      bookContainer.appendChild(read);
+      const titleBox = document.createElement('p');
+      const authorBox = document.createElement('p');
+      const pagesBox = document.createElement('p');
+      const readBox = document.createElement('p');
+      titleBox.textContent = `Title: ${library[book].title}`;
+      authorBox.textContent = `Author: ${library[book].author}`;
+      pagesBox.textContent = `Pages: ${library[book].pages}`;
+      readBox.textContent = `Have I read this book?: ${library[book].read}`;
+      bookContainer.appendChild(titleBox);
+      bookContainer.appendChild(authorBox);
+      bookContainer.appendChild(pagesBox);
+      bookContainer.appendChild(readBox);
       libraryContainer.appendChild(bookContainer);
     }
   }
   createForm(){
     const form = document.createElement('form');
     form.classList.add('form');
+    form.setAttribute('onsubmit', 'return false');
     const titleLabel = document.createElement('label');
     titleLabel.htmlFor = 'titleInput';
     titleLabel.textContent = "Title: ";
