@@ -6,14 +6,17 @@ class Book{
     this.author = author;
     this.pages = pages;
     this.read = read;
+    console.log("constructor")
   }
-  addBookToLibrary(){
+  addBookToLibrary(event){
     this.title = document.getElementById('titleInput').value;
     this.author = document.getElementById('authorInput').value;
     this.pages = document.getElementById('pagesInput').value;
     this.read = document.getElementById('readInput').value;
     library.push(book);
     console.log(library[0]);    
+    event.preventDefault();
+    this.updateScreen();
   }
   updateScreen(){
     for(let book in library){
@@ -36,8 +39,8 @@ class Book{
   }
   createForm(){
     const form = document.createElement('form');
-    form.classList.add('form');
-    form.setAttribute('onsubmit', 'return false');
+    form.setAttribute('id', 'form');
+    //form.setAttribute('onsubmit', 'return false');
     const titleLabel = document.createElement('label');
     titleLabel.htmlFor = 'titleInput';
     titleLabel.textContent = "Title: ";
@@ -89,6 +92,7 @@ class Book{
     buttonContainer.appendChild(resetButton);
     form.appendChild(buttonContainer);
     body.appendChild(form);
+    console.log("created form");
   }
 }
 
@@ -99,10 +103,10 @@ const body = document.body;
 const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', book.createForm);
 
-const submitButton = document.getElementById('submitButton');
-if(submitButton){
-  submitButton.addEventListener('click', book.addBookToLibrary);
+const form = document.getElementById('form');
+if(form){
   console.log("Submit button listener");
+  form.addEventListener('submit', book.addBookToLibrary);
 }
 
 
