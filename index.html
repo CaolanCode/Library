@@ -19,6 +19,28 @@
       <button id="newBookButton">New Book</button>
     </div>
     <div id="libraryContainer"></div>
+    <form action="" id="form">
+      <div class="inputContainer">
+        <label for="titleInput">Title:</label>
+        <input type="text" id="titleInput" name="titleInput" />
+      </div>
+      <div class="inputContainer">
+        <label for="authorInput">Author:</label>
+        <input type="text" id="authorInput" name="authorInput" />
+      </div>
+      <div class="inputContainer">
+        <label for="pagesInput">Pages:</label>
+        <input type="number" id="pagesInput" name="pagesInput" />
+      </div>
+      <div class="checkboxContainer">
+        <label for="readInput">Have I read?:</label>
+        <input type="checkbox" id="readInput" name="readInput" />
+      </div>
+      <div class="buttonContainer">
+        <button type="submit" id="submitButton">Submit</button>
+        <button type="reset" id="resetButton">Clear</button>
+      </div>
+    </form>
     <script src="app.js"></script>
   </body>
 </html>
