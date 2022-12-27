@@ -17,8 +17,10 @@ function addBookToLibrary(){
   const book = new Book(titleInput, authorInput, pagesInput, read);
   library.push(book);  
   displayLibrary();
+  exitForm();
 }
 function displayLibrary(){
+  libraryContainer.innerHTML = "";
   for(let item in library){
     const bookContainer = document.createElement('div');
     bookContainer.classList.add('bookContainer')
@@ -42,6 +44,10 @@ function displayForm(){
 }
 function exitForm(){
   form.style.visibility = 'hidden';
+  document.getElementById('titleInput').value = "";
+  document.getElementById('authorInput').value = "";
+  document.getElementById('pagesInput').value = "";
+  document.getElementById('readInput').checked = false;
 }
 
 const library = [];
