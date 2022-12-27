@@ -4,8 +4,19 @@ function Book(title, author, pages, read){
   this.pages = pages;
   this.read = read;
 }
-function addBookToLibrary(book){
+function addBookToLibrary(){
+  const titleInput = document.getElementById('titleInput').value;
+  const authorInput = document.getElementById('authorInput').value;
+  const pagesInput = document.getElementById('pagesInput').value;
+  let read = false;
+  if(document.getElementById('readInput').checked){
+    read = true;
+  } else {
+    read = false;
+  }
+  const book = new Book(titleInput, authorInput, pagesInput, read);
   library.push(book);  
+  displayLibrary();
 }
 function displayLibrary(){
   for(let item in library){
@@ -27,28 +38,30 @@ function displayLibrary(){
   }
 }
 function displayForm(){
-  const form = document.getElementById('form');
   form.style.visibility = 'visible';
 }
 function exitForm(){
-  const form = document.getElementById('form');
   form.style.visibility = 'hidden';
 }
 
 const library = [];
-const bookOne = new Book("The Bullet That Missed", "Richard Osman", 432, false);
-const bookTwo = new Book("Atomic Habits", "James Clear", 320, true);
-const bookThree = new Book("Thinking Fast and Slow", "Daniel Kahneman", 512, true);
 const libraryContainer = document.getElementById('libraryContainer');
 
 // form
+const form = document.getElementById('form');
 const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', displayForm);
 const exitButton = document.getElementById('exitButton');
-exitButton.addEventListener('click', exitForm)
+exitButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log(e)
+  exitForm();
+})
+const submitButton = document.getElementById('submitButton');
+submitButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log(e)
+  addBookToLibrary();
+})
 
-addBookToLibrary(bookOne);
-addBookToLibrary(bookTwo);
-addBookToLibrary(bookThree);
-displayLibrary();
 
