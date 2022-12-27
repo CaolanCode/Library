@@ -27,7 +27,12 @@ function displayLibrary(){
   }
 }
 function displayForm(){
-
+  const form = document.getElementById('form');
+  form.style.visibility = 'visible';
+}
+function exitForm(){
+  const form = document.getElementById('form');
+  form.style.visibility = 'hidden';
 }
 
 const library = [];
@@ -35,10 +40,12 @@ const bookOne = new Book("The Bullet That Missed", "Richard Osman", 432, false);
 const bookTwo = new Book("Atomic Habits", "James Clear", 320, true);
 const bookThree = new Book("Thinking Fast and Slow", "Daniel Kahneman", 512, true);
 const libraryContainer = document.getElementById('libraryContainer');
-const body = document.body;
 
+// form
 const newBookButton = document.getElementById('newBookButton');
 newBookButton.addEventListener('click', displayForm);
+const exitButton = document.getElementById('exitButton');
+exitButton.addEventListener('click', exitForm)
 
 addBookToLibrary(bookOne);
 addBookToLibrary(bookTwo);
