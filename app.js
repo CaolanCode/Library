@@ -1,116 +1,47 @@
-let library = [];
-
-class Book{
-  constructor(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    console.log("constructor")
-  }
-  addBookToLibrary(event){
-    this.title = document.getElementById('titleInput').value;
-    this.author = document.getElementById('authorInput').value;
-    this.pages = document.getElementById('pagesInput').value;
-    this.read = document.getElementById('readInput').value;
-    library.push(book);
-    console.log(library[0]);    
-    event.preventDefault();
-    this.updateScreen();
-  }
-  updateScreen(){
-    for(let book in library){
-      const bookContainer = document.createElement('div');
-      bookContainer.classList.add('bookContainer')
-      const titleBox = document.createElement('p');
-      const authorBox = document.createElement('p');
-      const pagesBox = document.createElement('p');
-      const readBox = document.createElement('p');
-      titleBox.textContent = `Title: ${library[book].title}`;
-      authorBox.textContent = `Author: ${library[book].author}`;
-      pagesBox.textContent = `Pages: ${library[book].pages}`;
-      readBox.textContent = `Have I read this book?: ${library[book].read}`;
-      bookContainer.appendChild(titleBox);
-      bookContainer.appendChild(authorBox);
-      bookContainer.appendChild(pagesBox);
-      bookContainer.appendChild(readBox);
-      libraryContainer.appendChild(bookContainer);
-    }
-  }
-  createForm(){
-    const form = document.createElement('form');
-    form.setAttribute('id', 'form');
-    //form.setAttribute('onsubmit', 'return false');
-    const titleLabel = document.createElement('label');
-    titleLabel.htmlFor = 'titleInput';
-    titleLabel.textContent = "Title: ";
-    const titleInput = document.createElement('input');
-    titleInput.type = "text";
-    titleInput.name = "titleInput";
-    titleInput.setAttribute('id', 'titleInput');
-    const authorLabel = document.createElement('label');
-    authorLabel.htmlFor = 'authorInput';
-    authorLabel.textContent = "Author: ";
-    const authorInput = document.createElement('input');
-    authorInput.type = "text";
-    authorInput.name = "authorInput";
-    authorInput.setAttribute('id', 'authorInput');
-    const pagesLabel = document.createElement('label');
-    pagesLabel.htmlFor = 'pagesInput';
-    pagesLabel.textContent = "Pages: ";
-    const pagesInput = document.createElement('input');
-    pagesInput.type = "number";
-    pagesInput.name = "pagesInput";
-    pagesInput.setAttribute('id', 'pagesInput');
-    const readLabel = document.createElement('label');
-    readLabel.htmlFor = 'readInput';
-    readLabel.textContent = "Read: ";
-    const readInput = document.createElement('input');
-    readInput.type = "text";
-    readInput.name = "readInput";
-    readInput.setAttribute('id', 'readInput');
-    readInput.placeholder = " Have I read this Book?"
-    const submitButton = document.createElement('button');
-    submitButton.type = "submit";
-    submitButton.textContent = "Submit";
-    submitButton.setAttribute('id', 'submitButton')
-    const resetButton = document.createElement('button');
-    resetButton.type = "reset";
-    resetButton.textContent = "Clear"
-    resetButton.setAttribute('id', 'clearButton')
-    const buttonContainer = document.createElement('div');
-    buttonContainer.classList.add('buttonContainer');
-    form.appendChild(titleLabel);
-    form.appendChild(titleInput);
-    form.appendChild(authorLabel);
-    form.appendChild(authorInput);
-    form.appendChild(pagesLabel);
-    form.appendChild(pagesInput);
-    form.appendChild(readLabel);
-    form.appendChild(readInput);
-    buttonContainer.appendChild(submitButton);
-    buttonContainer.appendChild(resetButton);
-    form.appendChild(buttonContainer);
-    body.appendChild(form);
-    console.log("created form");
+function Book(title, author, pages, read){
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.read = read;
+}
+function addBookToLibrary(book){
+  library.push(book);  
+}
+function displayLibrary(){
+  for(let item in library){
+    const bookContainer = document.createElement('div');
+    bookContainer.classList.add('bookContainer')
+    const titleBox = document.createElement('p');
+    const authorBox = document.createElement('p');
+    const pagesBox = document.createElement('p');
+    const readBox = document.createElement('p');
+    titleBox.textContent = `Title: ${library[item].title}`;
+    authorBox.textContent = `Author: ${library[item].author}`;
+    pagesBox.textContent = `Pages: ${library[item].pages}`;
+    readBox.textContent = `Have I read this book?: ${library[item].read}`;
+    bookContainer.appendChild(titleBox);
+    bookContainer.appendChild(authorBox);
+    bookContainer.appendChild(pagesBox);
+    bookContainer.appendChild(readBox);
+    libraryContainer.appendChild(bookContainer);
   }
 }
+function displayForm(){
 
-const book = new Book("Uknown", "Unknown", 0, "No");
+}
+
+const library = [];
+const bookOne = new Book("The Bullet That Missed", "Richard Osman", 432, false);
+const bookTwo = new Book("Atomic Habits", "James Clear", 320, true);
+const bookThree = new Book("Thinking Fast and Slow", "Daniel Kahneman", 512, true);
 const libraryContainer = document.getElementById('libraryContainer');
 const body = document.body;
 
 const newBookButton = document.getElementById('newBookButton');
-newBookButton.addEventListener('click', book.createForm);
+newBookButton.addEventListener('click', displayForm);
 
-const form = document.getElementById('form');
-if(form){
-  console.log("Submit button listener");
-  form.addEventListener('submit', book.addBookToLibrary);
-}
-
-
-
-
-
+addBookToLibrary(bookOne);
+addBookToLibrary(bookTwo);
+addBookToLibrary(bookThree);
+displayLibrary();
 
