@@ -60,13 +60,11 @@ newBookButton.addEventListener('click', displayForm);
 const exitButton = document.getElementById('exitButton');
 exitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  console.log(e)
   exitForm();
 })
 const submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  console.log(e)
   addBookToLibrary();
 })
 
