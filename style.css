@@ -111,6 +111,13 @@ body{
   margin: 1vh 1vw;
   padding: 2vh 0;
 }
-.bookContainer p{
+.bookContainer p, .removeButton{
   margin-top: 1vh;
+}
+.removeButton{
+  color: white;
+  background-color: #075985;
+  border: none;
+  padding: .5vh 1vw;
+  border-radius: 1vh;
 }
