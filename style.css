@@ -46,12 +46,30 @@ body{
   background-color: #075985;
   color: white;
   border-radius: 1vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6)
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+  visibility: hidden;
 }
 .inputContainer, .buttonContainer, .checkboxContainer{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.exitContainer{
+  display: flex;
+  justify-content: flex-end;
+  padding-top: .5vh;
+  padding-right: .5vw;
+}
+.exitContainer button{
+  height: 18px;
+  width: 18px;
+  border-radius: 9px;
+  background-color: #075985;
+  color: white;
+  align-items: center;
+  font-weight: 700;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
 }
 .inputContainer label, .buttonContainer button{
   flex: 1;
