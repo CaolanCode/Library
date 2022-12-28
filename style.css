@@ -16,7 +16,7 @@ body{
   background-color: #075985;
   position: sticky;
 }
-#newBookButton{
+#new-book-button{
   padding: 1vh 1vw;
   border-radius: 1vh;
   border: none;
@@ -30,7 +30,7 @@ body{
   font-size: 2rem;
 }
 /* main container */
-#libraryContainer{
+#library-container{
   padding: 2vh 2vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
@@ -49,18 +49,18 @@ body{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
   visibility: hidden;
 }
-.inputContainer, .buttonContainer, .checkboxContainer{
+.input-container, .button-container, .checkbox-container{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.exitContainer{
+.exit-container{
   display: flex;
   justify-content: flex-end;
   padding-top: .5vh;
   padding-right: .5vw;
 }
-.exitContainer button{
+.exit-container button{
   height: 18px;
   width: 18px;
   border-radius: 9px;
@@ -71,38 +71,38 @@ body{
   border: none;
   background: rgba(255, 255, 255, 0.3);
 }
-.inputContainer label, .buttonContainer button{
+.input-container label, .button-container button{
   flex: 1;
 }
-.inputContainer input{
+.input-container input{
   flex: 3;
   padding: .5vh 0;
 }
-.inputContainer, .checkboxContainer{
+.input-container, .checkbox-container{
   padding: 0 1vw;
   padding-top: 1vh;
 }
-.checkboxContainer input{
+.checkbox-container input{
   height: 3vh;
   width: 3vw;
 }
-.buttonContainer{
+.button-container{
   padding-top: 1vh;
 }
-.buttonContainer button{
+.button-container button{
   padding: 1vh 1vw;
   background-color: white;
   font-weight: 700;
   border: 1px #075985 solid;
 }
-#submitButton, .buttonContainer{
+#submit-button, .button-container{
   border-bottom-left-radius: 1vh;
 }
-#resetButton, .buttonContainer{
+#reset-button, .button-container{
   border-bottom-right-radius: 1vh;
 }
 /* Book Container */
-.bookContainer{
+.book-container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,10 +111,10 @@ body{
   margin: 1vh 1vw;
   padding: 2vh 0;
 }
-.bookContainer p, .removeButton{
+.book-container p, .remove-button{
   margin-top: 1vh;
 }
-.removeButton{
+.remove-button{
   color: white;
   background-color: #075985;
   border: none;
