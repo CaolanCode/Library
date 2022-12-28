@@ -34,9 +34,6 @@ function displayLibrary(){
     removeButton.dataset.index = item;
     removeButton.setAttribute('type', 'button');
     removeButton.addEventListener('click', removeBook);
-    console.log(removeButton.className);
-    console.log(removeButton.type);
-    console.log(removeButton.dataset.index);
     titleBox.textContent = `Title: ${library[item].title}`;
     authorBox.textContent = `Author: ${library[item].author}`;
     pagesBox.textContent = `Pages: ${library[item].pages}`;
