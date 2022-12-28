@@ -1,10 +1,23 @@
+function Library(library = []){
+  this.library = library;
+}
+Library.prototype.add = function addBookToLibrary(book){
+  this.library.push(book);
+  console.log(this.library);
+}
+Library.prototype.remove = function removeBookFromLibrary(index){
+  this.library.splice(index, 1);
+}
+Library.prototype.displayLibrary = function displayLibrary(){
+  createDisplay(this.library);
+}
 function Book(title, author, pages, read){
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
 }
-function addBookToLibrary(){
+function getBookData(){
   const titleInput = document.getElementById('titleInput').value;
   const authorInput = document.getElementById('authorInput').value;
   const pagesInput = document.getElementById('pagesInput').value;
@@ -15,11 +28,11 @@ function addBookToLibrary(){
     read = false;
   }
   const book = new Book(titleInput, authorInput, pagesInput, read);
-  library.push(book);  
-  displayLibrary();
+  library.add(book);  
+  library.displayLibrary();
   exitForm();
 }
-function displayLibrary(){
+function createDisplay(library){
   libraryContainer.innerHTML = "";
   for(let item in library){
     const bookContainer = document.createElement('div');
@@ -58,11 +71,11 @@ function exitForm(){
 }
 function removeBook(event){
   const index = event.target.getAttribute('data-index');
-  library.splice(index, 1);
-  displayLibrary();
+  library.remove(index);
+  library.displayLibrary();
 }
 
-const library = [];
+const library = new Library();
 const libraryContainer = document.getElementById('libraryContainer');
 
 // form
@@ -77,5 +90,5 @@ exitButton.addEventListener('click', (e) => {
 const submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  addBookToLibrary();
+  getBookData();
 })
