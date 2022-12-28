@@ -114,10 +114,22 @@ body{
 .book-container p, .remove-button{
   margin-top: 1vh;
 }
-.remove-button{
+.remove-button, .read-button{
   color: white;
-  background-color: #075985;
   border: none;
   padding: .5vh 1vw;
   border-radius: 1vh;
+  font-weight: 700;
+}
+.remove-button{
+  background-color: #075985;
+}
+.read-button{
+  background-color: #b91c1c;
+  margin-top: 2vh;
+
+}
+.book-is-read{
+  background-color: #22c55e;
+  color: black;
 }
