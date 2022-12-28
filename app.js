@@ -61,7 +61,6 @@ function exitForm(){
 }
 function removeBook(event){
   const index = event.target.getAttribute('data-index');
-  console.log("remove index" + index)
   library.splice(index, 1);
   displayLibrary();
 }
