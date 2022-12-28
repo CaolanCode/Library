@@ -28,6 +28,15 @@ function displayLibrary(){
     const authorBox = document.createElement('p');
     const pagesBox = document.createElement('p');
     const readBox = document.createElement('p');
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('removeButton');
+    removeButton.innerHTML = "Remove"
+    removeButton.dataset.index = item;
+    removeButton.setAttribute('type', 'button');
+    removeButton.addEventListener('click', removeBook);
+    console.log(removeButton.className);
+    console.log(removeButton.type);
+    console.log(removeButton.dataset.index);
     titleBox.textContent = `Title: ${library[item].title}`;
     authorBox.textContent = `Author: ${library[item].author}`;
     pagesBox.textContent = `Pages: ${library[item].pages}`;
@@ -36,6 +45,7 @@ function displayLibrary(){
     bookContainer.appendChild(authorBox);
     bookContainer.appendChild(pagesBox);
     bookContainer.appendChild(readBox);
+    bookContainer.appendChild(removeButton);
     libraryContainer.appendChild(bookContainer);
   }
 }
@@ -48,6 +58,12 @@ function exitForm(){
   document.getElementById('authorInput').value = "";
   document.getElementById('pagesInput').value = "";
   document.getElementById('readInput').checked = false;
+}
+function removeBook(event){
+  const index = event.target.getAttribute('data-index');
+  console.log("remove index" + index)
+  library.splice(index, 1);
+  displayLibrary();
 }
 
 const library = [];
@@ -67,5 +83,3 @@ submitButton.addEventListener('click', (e) => {
   e.preventDefault();
   addBookToLibrary();
 })
-
-
